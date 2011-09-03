@@ -10,7 +10,7 @@ to test command line tools that communicate with Web APIs.
 
 Antilles works best with cucumber, but it can be used with any testing tool.
 
-1. Install the gem:
+### Install the gem:
 
       gem install antilles
 
@@ -20,7 +20,7 @@ Antilles works best with cucumber, but it can be used with any testing tool.
         gem :antilles
       end
 
-2. Set up environment:
+### Set up environment:
 
       # features/support/antilles.rb
       require 'antilles/cucumber'
