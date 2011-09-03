@@ -12,23 +12,23 @@ Antilles works best with cucumber, but it can be used with any testing tool.
 
 1. Install the gem:
 
-    gem install antilles
+      gem install antilles
 
    or use bundler:
 
-    group :test do
-      gem :antilles
-    end
+      group :test do
+        gem :antilles
+      end
 
 2. Set up environment:
 
-    # features/support/antilles.rb
-    require 'antilles/cucumber'
+      # features/support/antilles.rb
+      require 'antilles/cucumber'
 
-    Antilles.configure do |server|
-      server.port = 9876   # defaults to 8080
-      server.log = STDOUT  # defaults to nil for no logging
-    end
+      Antilles.configure do |server|
+        server.port = 9876   # defaults to 8080
+        server.log = STDOUT  # defaults to nil for no logging
+      end
 
 Requiring `antilles/cucumber` will automatically start a server before all
 Scenarios tagged `@mimic`, and tear down the server when the test exits.
