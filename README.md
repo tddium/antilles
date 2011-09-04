@@ -6,7 +6,9 @@ Antilles forks a stub HTTP server using
 [mimic](https://github.com/lukeredpath/mimic) and exposes a simple interface to
 configure the server.  Antilles is meant to work with
 [aruba](https://github.com/cucumber/aruba) to make it easier to
-test command line tools that communicate with Web APIs. 
+test command line tools that communicate with Web APIs.
+
+Read this [blog post](http://blog.tddium.com/2011/09/04/antilles-testing-clis-that-use-web-services/) for our motivation.
 
 ## Installation
 
