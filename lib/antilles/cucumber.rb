@@ -2,14 +2,14 @@ require 'rubygems'
 require 'antilles'
 
 Before('@mimic') do
-  MimicServer.start
+  Antilles.start
 end
 
 After('@mimic') do
-  MimicServer.clear
+  Antilles.clear
 end
 
 at_exit do
-  server = MimicServer.server
+  server = Antilles.server
   server.stop if server
 end
