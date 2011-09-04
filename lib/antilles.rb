@@ -112,6 +112,10 @@ class Antilles
     def clear
       @server.clear rescue nil
     end
+
+    def install(*args)
+      server.install(*args)
+    end
   end
 end
 
