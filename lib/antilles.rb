@@ -14,6 +14,10 @@ class Antilles
     @log = log
   end
 
+  def started?
+    @pid_list.size > 0
+  end
+
   def start
     pid = Kernel.fork
     if pid.nil? then
@@ -39,7 +43,7 @@ class Antilles
   end
 
   def wait
-    (0...5).each do |i|
+    5.times do
       if ping then
         break
       end
