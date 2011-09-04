@@ -2,13 +2,15 @@
 
 ## Overview
 
-Antilles sets up a stub HTTP server using mimic and exposes a simple interface
-to configure the server.  Antilles is meant to work with aruba to make it easier
-to test command line tools that communicate with Web APIs. 
+Antilles forks a stub HTTP server using
+[mimic](https://github.com/lukeredpath/mimic) and exposes a simple interface to
+configure the server.  Antilles is meant to work with
+[aruba](https://github.com/cucumber/aruba) to make it easier to
+test command line tools that communicate with Web APIs. 
 
 ## Installation
 
-Antilles works best with cucumber, but it can be used with any testing tool.
+Antilles works best with cucumber and aruba, but it can be used with any testing tool.
 
 ### Install the gem:
 
@@ -20,7 +22,7 @@ Antilles works best with cucumber, but it can be used with any testing tool.
         gem :antilles
       end
 
-### Set up environment:
+### Set up environment, for example with cucumber:
 
       # features/support/antilles.rb
       require 'antilles/cucumber'
@@ -31,7 +33,10 @@ Antilles works best with cucumber, but it can be used with any testing tool.
       end
 
 Requiring `antilles/cucumber` will automatically start a server before all
-Scenarios tagged `@mimic`, and tear down the server when the test exits.
+Scenarios tagged `@mimic`, clear stubs between tests, and tear down the server
+when the test exits.  Look at [cucumber.rb]
+(https://github.com/tddium/antilles/blob/master/lib/antilles/cucumber.rb) if you
+need to customize this behavior.
 
 ## Usage
 
