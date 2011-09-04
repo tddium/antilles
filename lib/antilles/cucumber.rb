@@ -1,3 +1,6 @@
+require 'rubygems'
+require 'antilles'
+
 Before('@mimic') do
   MimicServer.start
 end
