@@ -9,7 +9,7 @@ class Antilles
   attr_accessor :log
 
   def initialize(port=nil, log=nil)
-    @port = port || 8080
+    @port = port || Antilles.find_available_port
     @pid_list = []
     @log = log
   end
@@ -115,6 +115,13 @@ class Antilles
 
     def install(*args)
       server.install(*args)
+    end
+
+    def find_available_port
+      server = TCPServer.new('127.0.0.1', 0)
+      server.addr[1]
+    ensure
+      server.close if server
     end
   end
 end
